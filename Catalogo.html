@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWENS SPORTS - Catálogo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <!-- Agrega estos meta tags para mejor apariencia -->
+    <meta name="theme-color" content="#FF9900">
+    <meta name="msapplication-navbutton-color" content="#FF9900">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FF9900">
+
+<!-- Iconos de Bootstrap (opcional) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <span>AWENS</span> SPORTS
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-house-door me-1"></i> Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="catalogo.html">
+                        <i class="bi bi-grid me-1"></i> Catálogo
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.html">
+                        <i class="bi bi-cart3 me-1"></i> Hacer Pedido
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="seguimiento.html">
+                        <i class="bi bi-truck me-1"></i> Seguimiento
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container p-0">
+        <section id="catalogo" class="seccion">
+            <h2 class="titulo-seccion mb-4">Nuestras Gamas de Uniformes</h2>
+
+            <div class="row">
+                <!-- Gama Básica -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-producto h-100">
+                        <div class="position-relative">
+                            <img src="Imagenes\GamaBaja.jpeg" class="card-img-top" alt="Gama Básica">
+                            <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-1 m-2 rounded-pill">
+                                <small>Más vendido</small>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Gama Básica</h5>
+                            <p class="card-text">Ideal para equipos escolares y categorías infantiles.</p>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Precios:</h6>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Infantil (2-12 años):</span>
+                                    <strong>$240.00</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Adulto:</span>
+                                    <strong>$310.00</strong>
+                                </div>
+                                <small class="text-muted d-block mt-1">+ IVA</small>
+                            </div>
+                            
+                            <h6 class="mt-3 mb-2">Incluye:</h6>
+                            <ul class="list-unstyled flex-grow-1">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Corte redondo</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Frente sublimado</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Espalda y mangas lisas</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Escudo sublimado</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 1 patrocinador incluido</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Short liso</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Calceta lisa</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Número en vinil</li>
+                            </ul>
+                            
+                            <div class="mt-3">
+                                <h6 class="mb-2">Extras:</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Manga larga: +$40</li>
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Nombre de jugador: +$20</li>
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Patrocinador extra: +$20</li>
+                                </ul>
+                            </div>
+                            <a href="carrito.html" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gama Clásica -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-producto h-100 border-primary">
+                        <div class="position-relative">
+                            <img src="Imagenes\GamaMedia.jpeg" class="card-img-top" alt="Gama Clásica">
+                            <div class="position-absolute top-0 start-0 bg-warning text-dark px-3 py-1 m-2 rounded-pill">
+                                <small>Recomendado</small>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Gama Clásica</h5>
+                            <p class="card-text">Perfecta para equipos universitarios y ligas locales.</p>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Precios:</h6>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Infantil (2-12 años):</span>
+                                    <strong>$300.00</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Adulto:</span>
+                                    <strong>$370.00</strong>
+                                </div>
+                                <small class="text-muted d-block mt-1">+ IVA</small>
+                            </div>
+                            
+                            <h6 class="mt-3 mb-2">Incluye:</h6>
+                            <ul class="list-unstyled flex-grow-1">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Corte variado</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Frente sublimado</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Espalda o mangas sublimadas (a elegir)</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Escudo tipo parche</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> 3 patrocinadores incluidos</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Short liso</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Calceta lisa</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Número en vinil</li>
+                            </ul>
+                            
+                            <div class="mt-3">
+                                <h6 class="mb-2">Extras:</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Manga larga: +$40</li>
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Nombre de jugador: +$20</li>
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Patrocinador extra: +$20</li>
+                                </ul>
+                            </div>
+                            <a href="carrito.html" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gama FullPrint -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-producto h-100">
+                        <div class="position-relative">
+                            <img src="Imagenes\GammaAlta.jpeg" class="card-img-top" alt="Gama FullPrint">
+                            <div class="position-absolute top-0 start-0 bg-info text-white px-3 py-1 m-2 rounded-pill">
+                                <small>Nuevo</small>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Gama FullPrint</h5>
+                            <p class="card-text">Para equipos profesionales que buscan máximo rendimiento.</p>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Precios:</h6>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Infantil (2-12 años):</span>
+                                    <strong>$450.00</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Adulto:</span>
+                                    <strong>$495.00</strong>
+                                </div>
+                                <small class="text-muted d-block mt-1">+ IVA</small>
+                            </div>
+                            
+                            <h6 class="mt-3 mb-2">Incluye:</h6>
+                            <ul class="list-unstyled flex-grow-1">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Corte variado</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Frente sublimado</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Espalda y mangas sublimadas</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Escudo 3D</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> 5 o más patrocinadores</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Short liso</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Calceta lisa</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Número en vinil</li>
+                            </ul>
+                            
+                            <div class="mt-3">
+                                <h6 class="mb-2">Extras:</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Manga larga: +$40</li>
+                                    <li class="mb-1"><i class="bi bi-plus-circle text-primary me-2"></i> Nombre de jugador: +$20</li>
+                                </ul>
+                            </div>
+                            <a href="carrito.html" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>AWENS SPORTS</h5>
+                    <p>Especialistas en uniformes deportivos de alta calidad.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@awenssports.com</li>
+                        <li>Teléfono: +1 234 567 890</li>
+                        <li>Dirección: Calle Deportiva 123</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="catalogo.html" class="text-white">Catálogo</a></li>
+                        <li><a href="carrito.html" class="text-white">Hacer Pedido</a></li>
+                        <li><a href="seguimiento.html" class="text-white">Seguimiento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2023 AWENS SPORTS. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bootstrap.js"></script>
+</body>
+</html>

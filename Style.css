@@ -1,0 +1,998 @@
+/* ==============================================
+   VARIABLES DE COLOR (Amazon Style)
+   ============================================== */
+:root {
+    /* Colores principales Amazon */
+    --naranja-amazon: #FF9900;
+    --azul-amazon: #146EB4;
+    --azul-oscuro-amazon: #232F3E;
+    --azul-claro-amazon: #37475A;
+    --blanco-amazon: #FFFFFF;
+    --gris-claro-amazon: #F7F7F7;
+    --gris-medio-amazon: #DDDDDD;
+    --gris-oscuro-amazon: #555555;
+    --negro-amazon: #131921;
+    --verde-amazon: #007600;
+    
+    /* Colores adicionales */
+    --color-texto: #0F1111;
+    --color-borde: #D5D9D9;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --color-exito: #007600;
+    --color-error: #CC0C39;
+    --color-advertencia: #FFD814;
+    
+    /* Sombras Amazon */
+    --sombra-suave: 0 2px 5px rgba(15, 17, 17, 0.15);
+    --sombra-media: 0 4px 10px rgba(15, 17, 17, 0.25);
+    --sombra-fuerte: 0 6px 15px rgba(15, 17, 17, 0.35);
+    
+    /* Transiciones */
+    --transicion-rapida: all 0.2s ease;
+    --transicion-media: all 0.3s ease;
+    
+    /* Bordes redondeados */
+    --radio-borde: 8px;
+    --radio-borde-pequeno: 4px;
+    --radio-borde-grande: 12px;
+}
+
+/* ==============================================
+   ESTILOS GENERALES (Amazon Style)
+   ============================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: var(--color-texto);
+    background-color: var(--gris-claro-amazon);
+    line-height: 1.6;
+    font-size: 14px;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 0 !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding-top: 60px !important; /* Aseguramos espacio para el navbar fijo */
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--color-texto);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 24px;
+    border-bottom: 2px solid var(--naranja-amazon);
+    padding-bottom: 8px;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 20px;
+    color: var(--azul-oscuro-amazon);
+}
+
+h4 {
+    font-size: 18px;
+    color: var(--azul-amazon);
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--azul-amazon);
+    text-decoration: none;
+    transition: var(--transicion-rapida);
+}
+
+a:hover {
+    color: var(--naranja-amazon);
+    text-decoration: underline;
+}
+
+/* ==============================================
+   NAVEGACIÓN (Amazon Style)
+   ============================================== */
+.navbar-custom {
+    background: linear-gradient(to bottom, var(--negro-amazon), var(--azul-oscuro-amazon));
+    padding: 0;
+    box-shadow: var(--sombra-media);
+    min-height: 60px;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 9999 !important; /* Aseguramos que sea el más alto */
+    height: 60px;
+    width: 100%;
+    transform: translateZ(0); /* Forzar aceleración por hardware */
+    will-change: transform;
+    margin: 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--blanco-amazon) !important;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand span {
+    color: var(--naranja-amazon);
+}
+
+.navbar-custom .container {
+    padding: 0 15px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--blanco-amazon) !important;
+    font-weight: 500;
+    padding: 20px 15px !important;
+    transition: var(--transicion-rapida);
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--naranja-amazon) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid var(--naranja-amazon);
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ==============================================
+   SECCIONES PRINCIPALES
+   ============================================== */
+.seccion {
+    padding: 0 0 0;
+    min-height: calc(100vh - 60px);
+    margin: 0 !important;
+    flex: 1;
+}
+
+.titulo-seccion {
+    color: var(--negro-amazon);
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-align: center;
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--naranja-amazon);
+    border-radius: 2px;
+}
+
+/* ==============================================
+   CARTAS DE PRODUCTO (Amazon Style)
+   ============================================== */
+.card-producto {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    background: var(--blanco-amazon);
+    transition: var(--transicion-media);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--sombra-suave);
+    overflow: hidden;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+    border-color: var(--naranja-amazon);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: var(--radio-borde);
+    border-top-right-radius: var(--radio-borde);
+    padding: 15px;
+    background: var(--gris-claro-amazon);
+}
+
+.card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: var(--azul-amazon);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    min-height: 54px;
+}
+
+.card-text {
+    color: var(--gris-oscuro-amazon);
+    font-size: 14px;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.precio {
+    color: var(--color-error);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.precio span {
+    font-size: 14px;
+    color: var(--gris-oscuro-amazon);
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+/* ==============================================
+   BOTONES (Amazon Style)
+   ============================================== */
+.btn-principal {
+    background: linear-gradient(to bottom, #F7CA00, #F2B200);
+    border: 1px solid #A88734;
+    border-radius: var(--radio-borde-pequeno);
+    color: #111 !important;
+    font-weight: 700;
+    padding: 8px 20px;
+    transition: var(--transicion-rapida);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none !important;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-principal:hover {
+    background: linear-gradient(to bottom, #F5C600, #e8a600);
+    border-color: #9c7e31;
+    color: #111 !important;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+}
+
+.btn-secundario {
+    background: linear-gradient(to bottom, #F8F9FA, #E7E9EC);
+    border: 1px solid #ADB1B8;
+    border-radius: var(--radio-borde-pequeno);
+    color: #111 !important;
+    font-weight: 700;
+    padding: 8px 20px;
+    transition: var(--transicion-rapida);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none !important;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-secundario:hover {
+    background: linear-gradient(to bottom, #E7E9EC, #D9DCE1);
+    border-color: #A2A6AC;
+    color: #111 !important;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    border: 1px solid #D5D9D9;
+    border-radius: var(--radio-borde-pequeno);
+    color: #0F1111;
+    padding: 3px 10px;
+    font-size: 14px;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #F7FAFA;
+    border-color: #D5D9D9;
+}
+
+/* ==============================================
+   FORMULARIOS (Amazon Style)
+   ============================================== */
+.form-control,
+.form-select {
+    border: 1px solid #D5D9D9;
+    border-radius: var(--radio-borde-pequeno);
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #0F1111;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(15,17,17,.15) inset;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #007185;
+    box-shadow: 0 0 0 3px #C8F3FA;
+    outline: none;
+}
+
+.form-label {
+    font-weight: 700;
+    color: #0F1111;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-check-input:checked {
+    background-color: var(--azul-amazon);
+    border-color: var(--azul-amazon);
+}
+
+.form-check-label {
+    color: #0F1111;
+}
+
+/* ==============================================
+   RESUMEN DEL CARRITO (Amazon Style)
+   ============================================== */
+.carrito-resumen {
+    background: var(--blanco-amazon);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1; /* Por debajo de la barra de navegación */
+}
+
+.carrito-resumen h4 {
+    border-bottom: 1px solid #D5D9D9;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #0F1111;
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F0F2F2;
+}
+
+.resumen-item:last-child {
+    border-bottom: none;
+}
+
+.resumen-item.total {
+    font-weight: 700;
+    font-size: 18px;
+    color: #B12704;
+    border-top: 2px solid #E7E7E7;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+/* ==============================================
+   BADGES DE ESTADO (Amazon Style)
+   ============================================== */
+.badge-estado {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.estado-revision {
+    background: linear-gradient(to bottom, #FFD814, #F7CA00);
+    color: #111;
+    border: 1px solid #F2B200;
+}
+
+.estado-aprobado {
+    background: linear-gradient(to bottom, #79C142, #5FA134);
+    color: #FFFFFF;
+    border: 1px solid #4F8C2E;
+}
+
+.estado-proceso {
+    background: linear-gradient(to bottom, #54B4D3, #3498DB);
+    color: #FFFFFF;
+    border: 1px solid #2980B9;
+}
+
+.estado-completado {
+    background: linear-gradient(to bottom, #232F3E, #131921);
+    color: #FFFFFF;
+    border: 1px solid #0F1111;
+}
+
+/* ==============================================
+   ALERTAS (Amazon Style)
+   ============================================== */
+.alert-custom {
+    border-radius: var(--radio-borde);
+    border-left: 4px solid var(--naranja-amazon);
+    background: #E3F2FD;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background: linear-gradient(to bottom, #D4EDDA, #C3E6CB);
+    border: 1px solid #C3E6CB;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: linear-gradient(to bottom, #F8D7DA, #F5C6CB);
+    border: 1px solid #F5C6CB;
+    color: #721C24;
+    border-left: 4px solid #DC3545;
+}
+
+.alert-warning {
+    background: linear-gradient(to bottom, #FFF3CD, #FFEAA7);
+    border: 1px solid #FFEAA7;
+    color: #856404;
+    border-left: 4px solid #FFC107;
+}
+
+.alert-info {
+    background: linear-gradient(to bottom, #D1ECF1, #BEE5EB);
+    border: 1px solid #BEE5EB;
+    color: #0C5460;
+    border-left: 4px solid #17A2B8;
+}
+
+/* ==============================================
+   CARD DE SEGUIMIENTO (Amazon Style)
+   ============================================== */
+.seguimiento-card {
+    background: var(--blanco-amazon);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.seguimiento-card h4 {
+    border-bottom: 2px solid #D5D9D9;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    color: #0F1111;
+}
+
+/* ==============================================
+   FOOTER (Amazon Style)
+   ============================================== */
+footer {
+    background: linear-gradient(to bottom, #232F3E, #131921);
+    color: #FFFFFF;
+    padding: 20px 0 0;
+    margin: 0;
+    border-top: 3px solid var(--naranja-amazon);
+    width: 100%;
+    margin-top: auto;
+}
+
+footer h5 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #37475A;
+    padding-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: #DDDDDD;
+    text-decoration: none;
+    transition: var(--transicion-rapida);
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+    padding-left: 5px;
+}
+
+footer .text-center {
+    border-top: 1px solid #37475A;
+    padding: 15px 0;
+    margin: 20px 0 0;
+    color: #999999;
+    font-size: 12px;
+    background-color: #131921;
+}
+
+/* ==============================================
+   UTILIDADES
+   ============================================== */
+.text-primary {
+    color: var(--azul-amazon) !important;
+}
+
+.text-success {
+    color: var(--verde-amazon) !important;
+}
+
+.text-danger {
+    color: var(--color-error) !important;
+}
+
+.bg-dark {
+    background-color: var(--negro-amazon) !important;
+}
+
+.bg-light {
+    background-color: var(--gris-claro-amazon) !important;
+}
+
+.shadow-sm {
+    box-shadow: var(--sombra-suave) !important;
+}
+
+.shadow {
+    box-shadow: var(--sombra-media) !important;
+}
+
+.rounded {
+    border-radius: var(--radio-borde) !important;
+}
+
+/* ==============================================
+   LISTAS (Amazon Style)
+   ============================================== */
+ul.list-unstyled li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+ul.list-unstyled li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--verde-amazon);
+    font-weight: bold;
+}
+
+/* ==============================================
+   CONTENEDORES Y ESPACIOS
+   ============================================== */
+.container {
+    max-width: 1200px;
+}
+
+.container.mt-5, 
+.container.pt-4,
+.container.p-0 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.p-3 {
+    padding: 1rem !important;
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+   ============================================== */
+@media (max-width: 768px) {
+    .seccion {
+        padding: 40px 0;
+    }
+    
+    .titulo-seccion {
+        font-size: 24px;
+    }
+    
+    .card-producto {
+        margin-bottom: 20px;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 10px 15px !important;
+    }
+    
+    .carrito-resumen {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .btn-principal,
+    .btn-secundario {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* ==============================================
+   ANIMACIONES Y EFECTOS
+   ============================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-producto {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ==============================================
+   SCROLL PERSONALIZADO
+   ============================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gris-claro-amazon);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--azul-claro-amazon);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--azul-amazon);
+}
+
+/* ==============================================
+   CONTADORES DE CANTIDAD (Amazon Style)
+   ============================================== */
+.contador-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.contador-cantidad button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #D5D9D9;
+    border-radius: var(--radio-borde-pequeno);
+    background: #F0F2F2;
+    color: #0F1111;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transicion-rapida);
+}
+
+.contador-cantidad button:hover:not(:disabled) {
+    background: #E3E6E6;
+    border-color: #A2A6AC;
+}
+
+.contador-cantidad button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.contador-cantidad span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F1111;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* ==============================================
+   ESTRELLAS DE CALIFICACIÓN
+   ============================================== */
+.rating {
+    color: #FFA41C;
+    font-size: 14px;
+}
+
+/* ==============================================
+   ETIQUETAS DE DESCUENTO
+   ============================================== */
+.badge.bg-danger {
+    background: linear-gradient(to bottom, #FF6161, #CC0C39) !important;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+/* ==============================================
+   NUEVOS ESTILOS PARA INDEX.HTML
+   ============================================== */
+.index-page body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2c3e50;
+}
+
+/* Navbar */
+.navbar {
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2c3e50 !important;
+    background: none !important;
+    -webkit-text-fill-color: #2c3e50 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #2c3e50 !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #3498db !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #2c3e50 !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(44, 62, 80, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0 4rem;
+    margin-top: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #5d6d7e;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #3498db;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-outline-primary {
+    color: #3498db;
+    border: 2px solid #3498db;
+    background: transparent;
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Features */
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1976d2;
+    font-size: 1.5rem;
+}
+
+/* Product Showcase */
+.product-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: white;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #3498db;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Stats */
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* CTA */
+.cta-section {
+    background: linear-gradient(135deg, #3498db 0%, #1976d2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+.cta-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0.1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+        padding: 5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin: 0 auto 2rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero img {
+        margin-top: 2rem;
+    }
+    
+    .feature-card, .product-card {
+        margin-bottom: 1.5rem;
+    }
+}
