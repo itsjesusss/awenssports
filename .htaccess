@@ -1,6 +1,11 @@
-Options +Indexes
 Options +FollowSymLinks
+Options +Indexes
+
+DirectoryIndex index.php index.html
 
 <FilesMatch "\.(php|html|css|js|png|jpg|jpeg|gif)$">
     Require all granted
 </FilesMatch>
+
+AddType text/css .css
+AddType application/javascript .js
