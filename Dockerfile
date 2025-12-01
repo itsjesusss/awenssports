@@ -24,3 +24,7 @@ RUN a2enconf project
 
 # Habilitar index.php primero
 RUN sed -i 's/DirectoryIndex .*/DirectoryIndex index.php index.html/' /etc/apache2/mods-enabled/dir.conf
+
+RUN a2enmod rewrite
+RUN a2enmod headers
+
