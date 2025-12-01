@@ -9,8 +9,9 @@ RUN a2enmod rewrite
 # Copiar todos los archivos del proyecto
 COPY . /var/www/html/
 
-# Permisos correctos
-RUN chmod -R 755 /var/www/html
+# Permitir acceso total de lectura a archivos estáticos
+RUN find /var/www/html -type d -exec chmod 755 {} \;
+RUN find /var/www/html -type f -exec chmod 644 {} \;
 RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
