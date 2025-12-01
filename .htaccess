@@ -1,6 +1,5 @@
 Options +Indexes
 Options +FollowSymLinks
-AllowOverride All
 
 <FilesMatch "\.(php|html|css|js|png|jpg|jpeg|gif)$">
     Require all granted
