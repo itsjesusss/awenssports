@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include 'Conexion.php';
 
 header('Content-Type: application/json');
 
@@ -65,4 +65,5 @@ try {
 } catch (Exception $e) {
     echo json_encode(['success' => false, 'message' => $e->getMessage()]);
 }
+
 ?>
