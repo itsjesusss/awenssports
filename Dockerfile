@@ -1,30 +1,21 @@
 FROM php:8.2-apache
 
-# Habilitar módulos necesarios
+# Instalar extensiones necesarias
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Habilitar módulos
 RUN a2enmod rewrite
 RUN a2enmod headers
 
-# Instalar extensiones MySQL
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-
-# Copiar el proyecto a /var/www/html
+# Copiar tu proyecto al servidor
 COPY . /var/www/html/
 
-# Dar permisos a Apache
+# Establecer permisos correctos
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
 
-# Configurar Apache para permitir .htaccess
-RUN echo "<Directory /var/www/html/> \
-    AllowOverride All \
-    Require all granted \
-</Directory>" > /etc/apache2/conf-available/project.conf
+# Habilitar archivo .htaccess
+RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 
-RUN a2enconf project
-
-# Habilitar index.php primero
-RUN sed -i 's/DirectoryIndex .*/DirectoryIndex index.php index.html/' /etc/apache2/mods-enabled/dir.conf
-
-RUN a2enmod rewrite
-RUN a2enmod headers
+EXPOSE 80
 
