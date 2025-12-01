@@ -1,9 +1,9 @@
 <?php
-$host = getenv("interchange.proxy.rlwy.net");
-$port = getenv("35142");
-$user = getenv("root");
-$pass = getenv("GwTGgeEKpDwjbqoVQJDPXjyfcwRWCaum");
-$dbname = getenv("railway");
+$host = getenv("DB_HOST");
+$port = getenv("DB_PORT");
+$user = getenv("DB_USER");
+$pass = getenv("DB_PASS");
+$dbname = getenv("DB_NAME");
 
 $conn = new mysqli($host, $user, $pass, $dbname, $port);
 
@@ -12,7 +12,6 @@ if ($conn->connect_error) {
 }
 
 echo "Conectado correctamente a Railway MySQL!";
-
-
 ?>
+
 
