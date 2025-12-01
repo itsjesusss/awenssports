@@ -1,6 +1,6 @@
 <?php
 // Incluir conexión
-require_once 'conexion.php';
+require_once 'Conexion.php';
 
 header('Content-Type: application/json');
 
@@ -75,4 +75,5 @@ try {
         'message' => $e->getMessage()
     ]);
 }
+
 ?>
