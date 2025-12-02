@@ -185,7 +185,7 @@ if (document.getElementById('app-carrito')) {
                 return this.precioGamaSeleccionada * this.calcularTotalUniformes;
             },
             calcularEnvio() {
-                return this.calcularSubtotal > 100 ? 0 : 10;
+                return this.calcularTotalUniformes === 0 ? 0 : (this.calcularSubtotal > 100 ? 0 : 10);
             },
             calcularTotal() {
                 return this.calcularSubtotal + this.calcularEnvio;
